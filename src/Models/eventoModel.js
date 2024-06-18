@@ -16,10 +16,10 @@ const EventoSchema = new Schema({
     type: String,
   },
   imagem: {
-    type: Image,
+    type: String,
   },
   categoria: {
-    type: Boolean,
+    type: String,
   },
 });
 
