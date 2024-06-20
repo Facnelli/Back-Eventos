@@ -1,0 +1,20 @@
+import { Router } from "express";
+
+import * as usuarioController from "../Controllers/usuarioController";
+const usuarioValidator = require("../Validators/usuarioValidator");
+const JWTVerify = require("./Middlewares/JWTVerify");
+const usuarioVerify = require("./Middlewares/usuarioVerify");
+
+const usuarioRoutes = Router();
+
+usuarioRoutes
+  .route("/")
+  .get(JWTVerify, usuarioController.read)
+  .post(JWTVerify, usuarioVerify, usuarioValidator.create, usuarioController.create);
+
+usuarioRoutes
+  .route("/:id")
+  .put(JWTVerify, usuarioVerify, usuarioValidator.update, usuariosController.update)
+  .delete(JWTVerify, usuarioVerify, usuarioValidator.destroy, usuarioController.delete);
+
+export default usuarioRoutes;

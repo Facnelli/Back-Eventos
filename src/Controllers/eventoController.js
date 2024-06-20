@@ -46,7 +46,7 @@ class eventosController {
     } catch (error) {
       res
         .status(500)
-        .json({ message: "/EventosController: Falha no deleete =(", error: error.message });
+        .json({ message: "/EventosController: Falha no delete =(", error: error.message });
     }
   }
 }
