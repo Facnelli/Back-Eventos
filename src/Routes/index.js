@@ -1,10 +1,8 @@
 const { Router } = require("express");
-const eventoRoutes = require("./eventoRoutes");
-//import usuarioRoutes from "./userRoutes";
-//import loginRoutes from "./loginRoutes";
+const EventRoutes = require("./EventRoutes");
 
 const routes = Router();
 
-routes.use("/", eventoRoutes); //.use("/usuarios", usuarioRoutes).use("/login", loginRoutes);
+routes.use("/", EventRoutes);
 
 module.exports = routes;
