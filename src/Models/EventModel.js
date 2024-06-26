@@ -2,22 +2,22 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const EventoSchema = new Schema({
-  titulo: {
+const EventSchema = new Schema({
+  title: {
     type: String,
     unique: true,
   },
-  descricao: {
+  description: {
     type: String,
   },
-  imagem: {
+  image: {
     type: String,
   },
-  categoria: {
+  category: {
     type: String,
   },
 });
 
-const EventosModel = mongoose.model("eventos", EventoSchema);
+const eventModel = mongoose.model("event", EventSchema);
 
-module.exports = EventosModel;
+module.exports = eventModel;
